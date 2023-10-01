@@ -19,17 +19,19 @@ export default function Home() {
       <div className="m-2 text-6xl font-light uppercase md:m-4 md:text-8xl md:font-thin lg:text-9xl">
         <p>everything</p>
         <p>Koga has</p>
-        <p>done</p>
-        <p className="italic">so far...</p>
+        <p>
+          done <span className="italic">so far...</span>
+        </p>
       </div>
       <nav className="m-2 flex flex-wrap gap-3 whitespace-nowrap md:m-4 md:gap-6 md:text-xl">
-        {navOptions.map((option: NavOption) => {
+        {navOptions.map((option: NavOption, i: number) => {
           return (
             <Link
               className={
                 option.highlight ? "nav-highlight" : "nav-no-highlight"
               }
               href={option.href}
+              key={i}
             >
               {option.text}
             </Link>
