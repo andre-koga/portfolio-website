@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import NavProject from "@/components/NavProject";
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ let navOptions: NavOption[] = [
 export default function Home() {
   return (
     <main>
+      <Header />
       <div className="m-2 text-6xl font-light uppercase md:m-4 md:text-8xl md:font-thin lg:text-9xl">
         <p>everything</p>
         <p>Koga has</p>
