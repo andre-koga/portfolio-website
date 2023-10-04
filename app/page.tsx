@@ -26,10 +26,12 @@ export default function Home() {
             total += lines[t].length;
           }
           return (
-            <p className="no-ligature">
+            <p className="no-ligature" key={i}>
               {line.split("").map((char: string, j: number) => {
                 return (
-                  <span className={"anim-" + (total + j + 1)}>{char}</span>
+                  <span className={"anim-" + (total + j + 1)} key={j}>
+                    {char}
+                  </span>
                 );
               })}
             </p>
