@@ -14,16 +14,27 @@ let navOptions: NavOption[] = [
   { text: "Future Projects", href: "/ideas", highlight: true },
 ];
 
+let lines: string[] = ["everything", "koga has", "done so far..."];
+
 export default function Home() {
   return (
     <main>
-      <Header />
       <div className="m-2 text-6xl font-light uppercase md:m-4 md:text-8xl md:font-thin lg:text-9xl">
-        <p>everything</p>
-        <p>Koga has</p>
-        <p>
-          done <span className="italic">so far...</span>
-        </p>
+        {lines.map((line: string, i: number) => {
+          let total = 0;
+          for (let t = 0; t < i; t++) {
+            total += lines[t].length;
+          }
+          return (
+            <p className="no-ligature">
+              {line.split("").map((char: string, j: number) => {
+                return (
+                  <span className={"anim-" + (total + j + 1)}>{char}</span>
+                );
+              })}
+            </p>
+          );
+        })}
       </div>
       <nav className="m-2 flex flex-wrap gap-3 whitespace-nowrap md:m-4 md:gap-6 md:text-xl">
         {navOptions.map((option: NavOption, i: number) => {
