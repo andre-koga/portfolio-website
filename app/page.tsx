@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import NavProject from "@/components/NavProject";
 import Link from "next/link";
 
