@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
 import "./globals.scss";
-import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const jet = JetBrains_Mono({ subsets: ["latin"] });
