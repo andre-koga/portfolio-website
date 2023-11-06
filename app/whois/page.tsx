@@ -28,26 +28,26 @@ interface Title {
 
 let titles: Title[] = [
   {
-    text: "web-designer",
+    text: "web-designer🌐",
   },
   {
-    text: "full-stack dev.",
+    text: "full-stack dev⚙️",
   },
   {
-    text: "game developer",
+    text: "game developer🎮",
   },
   {
-    text: "digital artist",
+    text: "digital artist🎨",
   },
   {
-    text: "animal lover",
+    text: "animal lover🐶",
   },
 ];
 
 export default function Whois() {
   return (
     <main>
-      <div className="m-2 text-4xl font-thin uppercase md:m-4 md:text-7xl md:font-thin lg:text-8xl">
+      <div className="mx-2 text-4xl font-thin uppercase md:mx-4 md:text-7xl md:font-thin lg:text-8xl">
         <p>koga is a...</p>
         <div className="h-[1.2em] overflow-hidden whitespace-nowrap">
           <div className="writing-wrapper">
@@ -60,6 +60,12 @@ export default function Whois() {
             })}
           </div>
         </div>
+      </div>
+      <div>
+        <p className="m-2 mt-0 text-2xl md:m-4 md:mt-0 md:text-3xl lg:text-4xl">
+          always strives to do his best in any task - based in atlanta,
+          brazilian at heart and japanese by blood. hmu! 🤙
+        </p>
       </div>
       <div className="mx-8 my-2 flex flex-col gap-2">
         {links.map((link, i) => {
