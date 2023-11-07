@@ -47,13 +47,13 @@ let titles: Title[] = [
 export default function Whois() {
   return (
     <main>
-      <div className="mx-2 text-4xl font-thin uppercase md:mx-4 md:text-7xl md:font-thin lg:text-8xl">
+      <div className="mx-2 my-16 text-center text-4xl font-thin uppercase md:mx-4 md:text-7xl md:font-thin lg:text-8xl">
         <p>koga is a...</p>
         <div className="h-[1.2em] overflow-hidden whitespace-nowrap">
           <div className="writing-wrapper">
             {titles.map((title, i) => {
               return (
-                <p className="font-medium text-red-700" key={i}>
+                <p className="mx-auto font-medium text-red-700" key={i}>
                   {title.text}
                 </p>
               );
@@ -62,18 +62,20 @@ export default function Whois() {
         </div>
       </div>
       <div>
-        <p className="m-2 mt-0 text-2xl md:m-4 md:mt-0 md:text-3xl lg:text-4xl">
+        <p className="mx-2 text-justify text-2xl sm:mx-8 md:text-3xl lg:text-4xl">
           always strives to do his best in any task - based in atlanta,
           brazilian at heart and japanese by blood. hmu! 🤙
         </p>
       </div>
-      <div className="mx-8 my-2 flex flex-col gap-2">
+      <div className="mx-8 my-8 flex flex-col gap-2">
         {links.map((link, i) => {
           return (
-            <a href={link.href} key={i}>
-              <p className="underline">
-                /{i + 1}. {link.text}
-              </p>
+            <a
+              className="nav-no-highlight mx-auto w-1/2 text-center"
+              href={link.href}
+              key={i}
+            >
+              {link.text}
             </a>
           );
         })}

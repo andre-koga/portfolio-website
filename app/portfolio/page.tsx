@@ -5,7 +5,44 @@ interface Experience {
   date: string;
 }
 
-let experiences: Experience[] = [];
+let experiences: Experience[] = [
+  {
+    title: "CMO at Dupla",
+    company: "Dupla",
+    description:
+      "Brazilian recruiter company. Helps companies hire qualified women in tech.",
+
+    date: "April - July 2021",
+  },
+  {
+    title: "Co-Founder of Nery",
+    company: "Nery",
+    description:
+      "Medical startup. Devised an app that uses AI to interact with the elderly.",
+    date: "January - March 2020",
+  },
+  {
+    title: "Vice President of NOIC",
+    company: "NOIC",
+    description:
+      "Largest Brazilian education NGO made by students with courses for science Olympiads.",
+    date: "May 2019 - March 2020",
+  },
+  {
+    title: "Math Tutoring",
+    company: "Self-employed",
+    description:
+      "Tutored students in Brazil and the US in advanced math for Olympiads.",
+    date: "2018 - Current",
+  },
+  {
+    title: "Web Developer at Big Data Big Impact",
+    company: "Big Data Big Impact",
+    description:
+      "Developed a web app that predicts Parkinson using data analysis and ML.",
+    date: "September - December 2022",
+  },
+];
 
 interface SkillCategory {
   name: string;
@@ -59,7 +96,7 @@ let skills: SkillCategory[] = [
       },
       {
         name: "ruby",
-        level: 1,
+        level: 2,
       },
       {
         name: "go",
@@ -67,7 +104,7 @@ let skills: SkillCategory[] = [
       },
       {
         name: "haskell",
-        level: 2,
+        level: 1,
       },
     ],
   },
@@ -246,25 +283,28 @@ let awards: Award[] = [];
 
 export default function Portfolio() {
   return (
-    <main>
-      <section id="experience">
-        <h2>Experience</h2>
-        <ul>
+    <main className="grid gap-2">
+      <section id="experience" className="m-2">
+        <h2 className="text-3xl font-bold uppercase">Experience</h2>
+        <ul className="my-2 grid gap-2 lg:grid-cols-2">
           {experiences.map((experience, i) => {
             return (
-              <li key={i}>
-                <h3>{experience.title}</h3>
-                <h4>{experience.company}</h4>
+              <li
+                key={i}
+                className="grid gap-1 rounded bg-black p-2 text-white md:p-3"
+              >
+                <h3 className="text-xl uppercase">{experience.title}</h3>
+                <p className="text-sm text-neutral-400">{experience.date}</p>
+                {/* <h4>{experience.company}</h4> */}
                 <p>{experience.description}</p>
-                <p>{experience.date}</p>
               </li>
             );
           })}
         </ul>
       </section>
       <section id="skills" className="m-2">
-        <h2>Skills</h2>
-        <ul className="grid gap-4 lg:grid-cols-2">
+        <h2 className="text-3xl font-bold uppercase">Skills</h2>
+        <ul className="my-2 grid gap-4 lg:grid-cols-2">
           {skills.map((category, i) => {
             return (
               <li key={i}>
@@ -290,8 +330,31 @@ export default function Portfolio() {
           })}
         </ul>
       </section>
-      <section id="awards">
-        <h2>Awards</h2>
+      <section id="awards" className="m-2">
+        <h2 className="text-3xl font-bold uppercase">Awards</h2>
+        <p>Sort by</p>
+        <ul className="flex gap-2">
+          <li>
+            <button className="rounded border-2 border-black px-2">
+              <p>year</p>
+            </button>
+          </li>
+          <li>
+            <button>
+              <p>subject</p>
+            </button>
+          </li>
+          <li>
+            <button>
+              <p>location</p>
+            </button>
+          </li>
+          <li>
+            <button>
+              <p>prize</p>
+            </button>
+          </li>
+        </ul>
         <ul>
           {awards.map((award, i) => {
             return (
