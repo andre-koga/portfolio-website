@@ -74,10 +74,6 @@ const facts = [
 export default function Footer() {
   const [fact, setFact] = useState("");
 
-  useEffect(() => {
-    generateFact();
-  }, []);
-
   const generateFact = () => {
     let newFact;
     do {
@@ -86,6 +82,10 @@ export default function Footer() {
     } while (newFact === fact);
     setFact(newFact);
   };
+
+  useEffect(() => {
+    generateFact();
+  }, []);
 
   return (
     <>
@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="flex w-full items-center border-t border-gray-700 p-2 pt-4 md:p-4">
           <p>© 2023</p>
           <div className="mx-2 h-1 flex-grow rounded-full bg-primary" />
-          <p>(●'◡'●)</p>
+          <p>(●&apos;◡&apos;●)</p>
         </div>
       </footer>
     </>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 const imageFilenames = [
   "lame.jpg",
@@ -109,31 +110,34 @@ export default function Whois() {
             });
           }}
         >
-          Hello there! I'm Andre Koga, a 21 years old guy who loves technology
-          and is always looking for new things to learn. With a Brazilian
-          origin, a Japanese heritage, and a home in the US, exploration is my
-          middle name. I'm a computer science student at Georgia Tech, and I've
-          been working with web development for the past 3 years. I'm also a
-          game developer and digital artist. I love animals - divided between
-          dogs and cats - and I'm always listening to music - half-alive fan.
+          Hello there! I&apos;m Andre Koga, a 21 years old guy who loves
+          technology and is always looking for new things to learn. With a
+          Brazilian origin, a Japanese heritage, and a home in the US,
+          exploration is my middle name. I&apos;m a computer science student at
+          Georgia Tech, and I&apos;ve been working with web development for the
+          past 3 years. I&apos;m also a game developer and digital artist. I
+          love animals - divided between dogs and cats - and I&apos;m always
+          listening to music - half-alive fan.
         </p>
         {images
           .filter((image) => image.visible)
           .map((image) => (
-            <img
+            <Image
               key={image.id}
               src={image.src}
-              alt="Description"
+              alt="Me!"
+              width={200}
+              height={200}
               className="rounded-lg"
               style={{
                 zIndex: image.zIndex,
                 objectFit: "cover",
                 pointerEvents: "none",
                 position: "fixed",
-                width: "20vmin",
-                height: "20vmin",
-                top: `calc(${image.y}px - 10vmin)`, // subtract half of the image height
-                left: `calc(${image.x}px - 10vmin)`, // subtract half of the image width
+                width: "24vh",
+                height: "24vh",
+                top: `calc(${image.y}px - 12vh)`, // subtract half of the image height
+                left: `calc(${image.x}px - 12vh)`, // subtract half of the image width
                 animation: "fade 1.5s forwards",
                 transform: `rotate(${image.rotation}deg)`,
               }}
