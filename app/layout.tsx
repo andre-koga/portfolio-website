@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={jet.className + " flex min-h-screen flex-col"}>
+      <body className={jet.className + " relative flex min-h-screen flex-col"}>
         <Header />
         {children}
         <Footer />
