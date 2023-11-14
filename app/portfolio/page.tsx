@@ -50,6 +50,13 @@ let experiences: Experience[] = [
       "Developed a web app that predicts Parkinson using data analysis and ML.",
     date: "September - December 2022",
   },
+  {
+    title: "Game Developer for Good Luck Collective",
+    company: "Good Luck Collective",
+    description:
+      "Developed multiple games for the Good Luck Collective, a group of indie artists and game developers.",
+    date: "2020 - Current",
+  },
 ];
 
 interface SkillCategory {
@@ -285,8 +292,18 @@ let skillNumberToWeight = (level: 1 | 2 | 3) => {
 
 type Location = "world" | "nat" | "state" | "reg";
 type Subject = "math" | "phys" | "astro" | "cs" | "chem" | "robot";
-type Prize = "gold" | "silver" | "bronze" | "hm" | "2nd";
-type Year = "2020" | "2019" | "2018" | "2017" | "2016" | "2015" | "2014";
+type Prize = "gold" | "silver" | "bronze" | "hm" | "2nd" | any;
+type Year =
+  | "2023"
+  | "2022"
+  | "2021"
+  | "2020"
+  | "2019"
+  | "2018"
+  | "2017"
+  | "2016"
+  | "2015"
+  | "2014";
 
 interface Award {
   title: string;
@@ -297,6 +314,41 @@ interface Award {
 }
 
 let awards: Award[] = [
+  {
+    title: "GMTK Game Jam 2023",
+    location: "world",
+    subject: "cs",
+    prize: "68th",
+    year: "2023",
+  },
+  {
+    title: "GMTK Game Jam 2021",
+    location: "world",
+    subject: "cs",
+    prize: "325th",
+    year: "2021",
+  },
+  {
+    title: "Brackeys Game Jam 2021.1",
+    location: "world",
+    subject: "cs",
+    prize: "36th",
+    year: "2021",
+  },
+  {
+    title: "HackGT X",
+    location: "state",
+    subject: "cs",
+    prize: "hm",
+    year: "2023",
+  },
+  {
+    title: "HackGT 9",
+    location: "state",
+    subject: "cs",
+    prize: "hm",
+    year: "2022",
+  },
   {
     title: "Hackathon MIT Hackmed",
     location: "nat",
@@ -624,7 +676,7 @@ let awards: Award[] = [
 export default function Portfolio() {
   const [sortOption, setSortOption] = useState<
     "location" | "subject" | "prize" | "year"
-  >("subject");
+  >("year");
 
   const changeDropdown = (choice: string) => {
     switch (choice) {
@@ -685,14 +737,36 @@ export default function Portfolio() {
         return "rounded bg-black bg-indigo-300 text-black px-1 text-sm";
       case "2nd":
         return "rounded bg-black bg-gray-300 text-black px-1 text-sm";
+      default:
+        return "rounded bg-black bg-gray-700 text-white px-1 text-sm";
     }
   };
 
   let sortingOrder = {
     ["location"]: ["world", "nat", "state", "reg"],
     ["subject"]: ["math", "phys", "astro", "cs", "chem", "robot"],
-    ["prize"]: ["gold", "silver", "bronze", "hm", "2nd"],
-    ["year"]: ["2020", "2019", "2018", "2017", "2016", "2015", "2014"],
+    ["prize"]: [
+      "gold",
+      "silver",
+      "bronze",
+      "hm",
+      "2nd",
+      "36th",
+      "68th",
+      "325th",
+    ],
+    ["year"]: [
+      "2023",
+      "2022",
+      "2021",
+      "2020",
+      "2019",
+      "2018",
+      "2017",
+      "2016",
+      "2015",
+      "2014",
+    ],
   };
 
   const groupAwardsBy = (key: keyof Award) => {
@@ -818,8 +892,8 @@ export default function Portfolio() {
             className="rounded border-2 border-black bg-black text-white"
             onChange={(e) => changeDropdown(e.target.value)}
           >
-            <option value="subject">Subject</option>
             <option value="year">Year</option>
+            <option value="subject">Subject</option>
             <option value="location">Location</option>
             <option value="prize">Prize</option>
           </select>
