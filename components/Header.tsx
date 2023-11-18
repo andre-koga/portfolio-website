@@ -38,7 +38,7 @@ export default function Header() {
         })}
         <div className="h-1 flex-grow rounded-full bg-black" />
       </div>
-      <div className="mx-2 my-4 text-6xl font-light uppercase sm:text-7xl md:m-4 md:mx-4 md:my-6 md:text-8xl md:font-thin lg:text-9xl">
+      <div className="mx-2 my-4 text-5xl font-light uppercase sm:text-7xl md:m-4 md:mx-4 md:my-6 md:text-8xl md:font-thin lg:text-9xl">
         {lines.map((line: string, i: number) => {
           let total = 0;
           for (let t = 0; t < i; t++) {
