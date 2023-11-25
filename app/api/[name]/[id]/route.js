@@ -8,8 +8,8 @@ let db = null;
 export async function GET(req, res) {
   // Extract the "id" from the URL by splitting the URL and taking the last element
   let url = req.url.split("/");
-  const id = url.pop();
-  const name = url.pop();
+  const id = req.query.id;
+  const name = req.query.name;
 
   // Check if the database instance has been initialized
   if (!db) {
