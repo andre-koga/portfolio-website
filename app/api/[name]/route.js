@@ -18,12 +18,13 @@ export async function GET(req, res) {
     });
   }
 
-  // Perform a database query to retrieve an item based on the id
-  const item = await db.all(`SELECT * FROM ${name}`);
-
-  // Return the items as a JSON response with status 200
-  return new Response(JSON.stringify(item), {
-    headers: { "Content-Type": "application/json" },
-    status: 200,
-  });
+  try {
+    const item = await db.all(`SELECT * FROM ${name}`);
+    return new Response(JSON.stringify(item), {
+      headers: { "Content-Type": "application/json" },
+      status: 200,
+    });
+  } catch (err) {
+    return new Response(err.message, { status: 500 });
+  }
 }
