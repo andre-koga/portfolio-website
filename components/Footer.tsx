@@ -51,8 +51,14 @@ export default function Footer() {
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
     })
-      .then((res) => res.json())
-      .then((data) => setFacts(data));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => setFacts(data))
+      .catch((error) => console.error("Error:", error));
   }, []);
 
   useEffect(() => {
