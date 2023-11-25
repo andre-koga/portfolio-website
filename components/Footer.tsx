@@ -53,7 +53,9 @@ export default function Footer() {
     })
       .then((res) => {
         if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
+          throw new Error(
+            `HTTP error! status: ${res.status} + ${res.statusText}`,
+          );
         }
         return res.json();
       })
