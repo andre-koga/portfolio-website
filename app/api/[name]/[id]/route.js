@@ -5,11 +5,10 @@ import { open } from "sqlite";
 let db = null;
 
 // Define the GET request handler function
-export async function GET(req, res) {
+export async function GET(req, context) {
   // Extract the "id" from the URL by splitting the URL and taking the last element
-  let url = req.url.split("/");
-  const id = req.query.id;
-  const name = req.query.name;
+  const id = context.params.id;
+  const name = context.params.name;
 
   // Check if the database instance has been initialized
   if (!db) {
