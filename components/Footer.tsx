@@ -38,19 +38,20 @@ interface FooterFact {
 }
 
 export default function Footer() {
-  // Define a state variable "items" and a function "setItems" to update the state
   const [facts, setFacts] = useState<FooterFact[]>([]);
   const [id, setId] = useState(0);
 
-  // Use the useEffect hook to fetch data from the API endpoint when the component mounts
   useEffect(() => {
     fetch(`/api/footer_facts`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json", // Set the request headers to indicate JSON format
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
     })
-      .then((res) => res.json()) // Parse the response data as JSON
+      .then((res) => res.json())
       .then((data) => setFacts(data));
   }, []);
 
