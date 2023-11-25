@@ -4,6 +4,9 @@ import { open } from "sqlite";
 let db = null;
 
 export async function GET(req, context) {
+  const id = context.params.id;
+  const name = context.params.name;
+
   if (!db) {
     db = await open({
       filename: "db/db.sqlite3",
@@ -11,16 +14,9 @@ export async function GET(req, context) {
     });
   }
 
-  const tables = await db.all(
-    "SELECT name FROM sqlite_master WHERE type='table'",
-  );
+  const item = await db.get(`SELECT * FROM ${name} WHERE id = ?`, id);
 
-  const allData = {};
-  for (let table of tables) {
-    allData[table.name] = await db.all(`SELECT * FROM ${table.name}`);
-  }
-
-  return new Response(JSON.stringify(allData), {
+  return new Response(JSON.stringify(item), {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",

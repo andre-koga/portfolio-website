@@ -46,21 +46,10 @@ export default function Footer() {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
     })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(
-            `HTTP error! status: ${res.status} + ${res.statusText}`,
-          );
-        }
-        return res.json();
-      })
-      .then((data) => setFacts(data))
-      .catch((error) => console.error("Error:", error));
+      .then((res) => res.json())
+      .then((data) => setFacts(data));
   }, []);
 
   useEffect(() => {
