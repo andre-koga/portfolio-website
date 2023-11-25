@@ -15,7 +15,7 @@ export async function GET(req, res) {
   if (!db) {
     // If the database instance is not initialized, open the database connection
     db = await open({
-      filename: "./db/db.sqlite3", // Specify the database file path
+      filename: "db/db.sqlite3", // Specify the database file path
       driver: sqlite3.Database, // Specify the database driver (sqlite3 in this case)
     });
   }

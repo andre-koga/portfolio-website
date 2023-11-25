@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaLinkedin, FaGithub, FaInstagram, FaItchIo } from "react-icons/fa";
 
 interface SocialLink {
@@ -37,8 +37,6 @@ interface FooterFact {
   description: string;
 }
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:3000";
-
 export default function Footer() {
   // Define a state variable "items" and a function "setItems" to update the state
   const [facts, setFacts] = useState<FooterFact[]>([]);
@@ -46,7 +44,7 @@ export default function Footer() {
 
   // Use the useEffect hook to fetch data from the API endpoint when the component mounts
   useEffect(() => {
-    fetch(`${SERVER_URL}/api/footer_facts`, {
+    fetch(`/api/footer_facts`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json", // Set the request headers to indicate JSON format

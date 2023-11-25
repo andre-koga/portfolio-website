@@ -6,7 +6,7 @@ let db = null;
 export async function GET(req, res) {
   if (!db) {
     db = await open({
-      filename: "./db/db.sqlite3",
+      filename: "db/db.sqlite3",
       driver: sqlite3.Database,
     });
   }
