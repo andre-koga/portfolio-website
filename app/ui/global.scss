@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply text-white;
+}
+
+.no-ligature {
+  font-variant-ligatures: none;
+}
+
+@font-face {
+  font-family: "JBM Variable";
+  src: url("/fonts/JetBrainsMono.ttf") format("truetype");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes koga-font {
+  55% {
+    font-weight: 100;
+  }
+  70% {
+    @apply text-dark;
+  }
+  100% {
+    font-weight: 800;
+    @apply text-color;
+  }
+}
+
+@for $i from 1 through 50 {
+  $class: "anim-" + #{$i};
+  $delay: $i * 0.08s;
+  .#{$class} {
+    font-family: "JBM Variable";
+    font-weight: 100;
+    animation: koga-font 2s ease-in-out #{$delay} infinite alternate;
+  }
+}

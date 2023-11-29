@@ -1,10 +1,8 @@
-import "./globals.scss";
-import { JetBrains_Mono } from "next/font/google";
+import "@/app/ui/global.scss";
+import { jet } from "@/app/ui/fonts";
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-const jet = JetBrains_Mono({ subsets: ["latin"] });
+import Header from "@/app/ui/header/header";
+import Footer from "@/app/ui/footer/footer";
 
 export const metadata: Metadata = {
   title: "Andre Koga",
@@ -18,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={jet.className + " relative flex min-h-screen flex-col"}>
+      <body
+        className={`${jet.className} relative flex min-h-screen flex-col bg-black antialiased`}
+      >
         <Header />
         {children}
         <Footer />

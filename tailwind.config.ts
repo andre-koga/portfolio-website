@@ -14,7 +14,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#FDFDFD",
+        light: "#fff",
+        mid: "#333",
+        dark: "#000",
+        color: "#f00",
       },
       fontFamily: {
         jbm: "JBM Variable",
