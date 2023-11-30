@@ -18,6 +18,22 @@ html {
   font-display: swap;
 }
 
+$colors: ("coral", "forestgreen", "dodgerblue"); // Add your colors here
+
+@for $i from 1 through 50 {
+  $class: "anim-" + #{$i};
+  $delay: $i * 0.08s;
+
+  @each $color in $colors {
+    .#{$class}-#{$color} {
+      font-family: "JBM Variable";
+      font-weight: 100;
+      --color: #{$color};
+      animation: koga-font 2s ease-in-out #{$delay} infinite alternate;
+    }
+  }
+}
+
 @keyframes koga-font {
   55% {
     font-weight: 100;
@@ -27,16 +43,15 @@ html {
   }
   100% {
     font-weight: 800;
-    @apply text-color;
+    color: var(--color);
   }
 }
 
-@for $i from 1 through 50 {
-  $class: "anim-" + #{$i};
-  $delay: $i * 0.08s;
-  .#{$class} {
-    font-family: "JBM Variable";
-    font-weight: 100;
-    animation: koga-font 2s ease-in-out #{$delay} infinite alternate;
-  }
+.hidden-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-text:hover + .hidden-image {
+  opacity: 1;
 }

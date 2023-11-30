@@ -1,46 +1,37 @@
 import { groupedSkills } from "@/app/portfolio/data";
 import clsx from "clsx";
+import { filterSkills } from "./definitions";
 
 const labels: string[] = ["Novice", "Proficient", "Expert"];
 
 export default function PortfolioSkills() {
   return (
     <>
-      <h2 className="text-3xl font-bold uppercase">Skills</h2>
+      <div className="flex items-center gap-2">
+        <h2 className="text-3xl font-bold uppercase">Skills</h2>
+      </div>
       <ul className="my-2 grid gap-4 lg:grid-cols-2">
         {groupedSkills.map((category, i) => {
           return (
-            <li key={i}>
-              <h3 className="text-2xl font-bold uppercase">{category.name}</h3>
+            <li
+              key={i}
+              className="grid gap-1 rounded border border-mid bg-darky p-2"
+            >
+              <h3 className="text-xl uppercase text-light">{category.name}</h3>
               <ul className="flex flex-wrap gap-1">
-                {category.skills.map((skill, j) => {
-                  return (
-                    <li
-                      key={j}
-                      className={clsx(
-                        { "order-3": skill.level === 1 },
-                        { "order-2": skill.level === 2 },
-                        { "order-1": skill.level === 3 },
-                      )}
-                    >
-                      <p className="bg-light text-dark flex items-center rounded-md px-1 py-0.5 uppercase">
-                        <span className="whitespace-nowrap pr-1">
-                          {skill.name}
-                        </span>
-                        <span
-                          className={clsx(
-                            "rounded px-0.5 text-sm text-black",
-                            { "bg-yellow-500": skill.level === 1 },
-                            { "bg-orange-500": skill.level === 2 },
-                            { "bg-red-600 text-white": skill.level === 3 },
-                          )}
-                        >
-                          {labels[skill.level - 1]}
-                        </span>
-                      </p>
-                    </li>
-                  );
-                })}
+                <div className="flex self-stretch rounded border border-mid bg-red-500 px-0.5" />
+                <div className="flex self-stretch rounded border border-mid bg-red-500 px-0.5" />
+                <div className="flex self-stretch rounded border border-mid bg-red-500 px-0.5" />
+                {filterSkills(category.skills, 3)}
+              </ul>
+              <ul className="flex flex-wrap gap-1">
+                {filterSkills(category.skills, 2)}
+                <div className="flex self-stretch rounded border border-mid bg-orange-500 px-0.5" />
+                <div className="flex self-stretch rounded border border-mid bg-orange-500 px-0.5" />
+              </ul>
+              <ul className="flex flex-wrap gap-1">
+                {filterSkills(category.skills, 1)}
+                <div className="flex self-stretch rounded border border-mid bg-yellow-500 px-0.5" />
               </ul>
             </li>
           );

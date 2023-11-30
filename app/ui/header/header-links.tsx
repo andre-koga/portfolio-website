@@ -4,25 +4,20 @@ import { NavLink } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
-
-let links: NavLink[] = [
-  { text: "Projects", href: "/" },
-  { text: "Portfolio", href: "/portfolio" },
-  { text: "Who's Koga?", href: "/whois" },
-];
+import { links } from "@/app/ui/header/data";
 
 export default function NavLinks() {
   const pathname = usePathname();
 
   return (
     <>
-      {links.map((link: NavLink) => {
+      {Object.entries(links).map(([key, link]: [string, NavLink]) => {
         return (
           <Link
             key={link.text}
             href={link.href}
             className={clsx(
-              "border-mid hover:bg-light hover:text-dark rounded border px-2 text-sm transition-colors sm:text-base",
+              "rounded border border-mid px-2 text-sm transition-colors hover:bg-light hover:text-dark sm:text-base",
               {
                 "bg-light text-dark": pathname === link.href,
               },
