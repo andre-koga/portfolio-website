@@ -9,7 +9,8 @@ export default function Whois() {
         color="coral"
       />
       <a
-        href=""
+        href="https://5hlun88awqk.typeform.com/to/qipNI8gu"
+        target="_blank"
         className="mx-auto rounded border border-mid px-2 text-sm text-light transition-colors hover:border-light"
       >
         Wanna talk? Click here!
