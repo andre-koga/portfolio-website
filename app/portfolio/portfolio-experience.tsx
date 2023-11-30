@@ -21,9 +21,11 @@ export default function PortfolioExperience() {
               </div>
               <p>{experience.description}</p>
               <ul className="flex gap-2 text-sm uppercase text-lighty">
-                {experience.tech.sort().map((tech) => {
+                {experience.tech.sort().map((tech, i) => {
                   return (
-                    <li className="rounded border border-mid px-1">{tech}</li>
+                    <li key={i} className="rounded border border-mid px-1">
+                      {tech}
+                    </li>
                   );
                 })}
               </ul>
