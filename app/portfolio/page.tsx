@@ -5,7 +5,7 @@ import HeaderSlogan from "../ui/header/header-slogan";
 
 export default function Portfolio() {
   return (
-    <main className="grid gap-2">
+    <main className="grid gap-4">
       <HeaderSlogan
         slogan={["experience,", "skills,", "and awards"]}
         color="dodgerblue"

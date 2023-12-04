@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="grid">
+    <main className="grid gap-4">
       <HeaderSlogan
         slogan={["crafting ideas", "into reality"]}
         color="forestgreen"
