@@ -11,16 +11,15 @@ export default function PortfolioExperience() {
           return (
             <li
               key={i}
-              className="grid items-start gap-2 rounded border border-mid bg-darky p-1.5 text-light"
+              className="grid items-start gap-1 rounded border border-mid bg-darky p-1.5 text-light"
             >
-              <div className="-mb-1 flex items-center">
+              <div className="flex flex-col items-start sm:flex-row sm:items-center">
                 <h3 className="flex-grow text-xl uppercase">
                   {experience.title}
                 </h3>
-                <p className="px-1 text-xs text-lighty">{experience.date}</p>
+                <p className="text-xs text-lighty sm:px-1">{experience.date}</p>
               </div>
-              <p>{experience.description}</p>
-              <ul className="flex gap-2 text-sm uppercase text-lighty">
+              <ul className="flex flex-wrap gap-1 text-xs uppercase text-lighty sm:text-sm">
                 {experience.tech.sort().map((tech, i) => {
                   return (
                     <li key={i} className="rounded border border-mid px-1">
@@ -29,6 +28,7 @@ export default function PortfolioExperience() {
                   );
                 })}
               </ul>
+              <p>{experience.description}</p>
             </li>
           );
         })}

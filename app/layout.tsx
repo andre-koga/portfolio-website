@@ -20,7 +20,7 @@ export default function RootLayout({
         className={`${jet.className} relative flex min-h-screen flex-col bg-black antialiased`}
       >
         <Header />
-        {children}
+        <div className="flex-grow">{children}</div>
         <Footer />
       </body>
     </html>

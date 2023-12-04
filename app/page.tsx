@@ -16,7 +16,7 @@ export default function Whois() {
         Wanna talk? Click here!
       </a>
       <div className="my-4">
-        <p className="mx-auto px-2 text-justify leading-10 sm:w-4/5 sm:text-xl">
+        <p className="mx-auto px-8 text-justify leading-10 sm:w-3/4 sm:text-xl">
           Hello there! I&apos;m Andre Koga , a 21 years old guy who loves
           technology and is always looking for new things to learn. With a
           Brazilian origin, a Japanese heritage, and a home in the US,

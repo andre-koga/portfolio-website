@@ -37,18 +37,18 @@ export default function PortfolioAwards() {
                     key={j}
                     className="grid grid-cols-7 items-center gap-1 rounded-md border border-mid bg-darky px-1 py-0.5 text-center uppercase text-light sm:grid-cols-9 md:grid-cols-10 lg:grid-cols-11"
                   >
-                    <h3 className="col-span-4 mr-1 overflow-hidden overflow-ellipsis whitespace-nowrap text-left text-sm sm:col-span-6 sm:text-base md:col-span-7 lg:col-span-8">
+                    <h3 className="col-span-4 mr-0.5 overflow-hidden overflow-ellipsis whitespace-nowrap text-left text-sm sm:col-span-6 sm:text-base md:col-span-7 lg:col-span-8">
                       {award.title}
                     </h3>
                     <span
-                      className={`overflow-hidden rounded px-1 text-xs text-white sm:text-sm ${
+                      className={`overflow-hidden rounded text-xs text-white sm:px-1 sm:text-sm ${
                         subjectToColor[award.subject]
                       }`}
                     >
                       {award.subject}
                     </span>
                     <span
-                      className={`overflow-hidden rounded px-1 text-xs sm:text-sm ${prizeToColor(
+                      className={`overflow-hidden rounded text-xs sm:px-1 sm:text-sm ${prizeToColor(
                         award.prize,
                       )}`}
                     >
@@ -56,7 +56,7 @@ export default function PortfolioAwards() {
                       {prizeSuffix(award.prize)}
                     </span>
                     <span
-                      className={`overflow-hidden rounded bg-black px-1 text-xs sm:text-sm ${
+                      className={`overflow-hidden rounded bg-black text-xs sm:px-1 sm:text-sm ${
                         locationToColor[award.location]
                       }`}
                     >
