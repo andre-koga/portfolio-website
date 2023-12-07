@@ -5,7 +5,7 @@ export default function Whois() {
   return (
     <main className="grid gap-4">
       <HeaderSlogan
-        slogan={["Passion driven,", "results oriented."]}
+        slogan={["Passion driven", "results oriented"]}
         color="coral"
       />
       <a
@@ -17,7 +17,7 @@ export default function Whois() {
       </a>
       <div className="my-4">
         <p className="mx-auto px-8 text-justify leading-10 sm:w-3/4 sm:text-xl">
-          Hello there! I&apos;m Andre Koga , a 21 years old guy who loves
+          Hello there! I&apos;m Andre Koga, a 21 years old guy who loves
           technology and is always looking for new things to learn. With a
           Brazilian origin, a Japanese heritage, and a home in the US,
           exploration is my middle name. I&apos;m a computer science student at
