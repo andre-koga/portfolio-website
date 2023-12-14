@@ -16,7 +16,27 @@ export default function Page() {
         Future project ideas here!
       </Link>
       <nav className="m-2 mt-4 grid gap-4 md:m-4 md:mt-8 md:grid-cols-2">
-        <ProjectCard></ProjectCard>
+        <ProjectCard
+          title="Thoughts by Koga"
+          description="Personal blog with dynamic visuals and backend"
+          link="https://th.andrekoga.com"
+          image1="/images/th.png"
+          image2="/images/th2.png"
+          techs={[
+            "Next.js",
+            "TailwindCSS",
+            "TypeScript",
+            "Sanity.io",
+            "Vercel",
+            "GitHub",
+            "Figma",
+          ]}
+        ></ProjectCard>
+        <div className="flex min-h-[200px] flex-col place-content-around items-center gap-2 rounded border border-mid bg-darky p-2">
+          <h2 className="text-xl uppercase text-lighty">
+            More projects to come...
+          </h2>
+        </div>
       </nav>
     </main>
   );
