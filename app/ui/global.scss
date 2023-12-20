@@ -18,7 +18,12 @@ html {
   font-display: swap;
 }
 
-$colors: ("coral", "forestgreen", "dodgerblue"); // Add your colors here
+$colors: (
+  "crimson",
+  "forestgreen",
+  "dodgerblue",
+  "darkorchid"
+); // Add your colors here
 
 @for $i from 1 through 50 {
   $class: "anim-" + #{$i};

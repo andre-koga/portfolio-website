@@ -7,7 +7,7 @@ export default function Portfolio() {
   return (
     <main className="grid gap-4">
       <HeaderSlogan
-        slogan={["experience,", "skills,", "and awards"]}
+        slogan={["experience, skills, and awards"]}
         color="dodgerblue"
       />
       <a

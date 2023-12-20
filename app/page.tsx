@@ -4,10 +4,7 @@ import Image from "next/image";
 export default function Whois() {
   return (
     <main className="grid gap-4">
-      <HeaderSlogan
-        slogan={["Passion driven", "results oriented"]}
-        color="coral"
-      />
+      <HeaderSlogan slogan={["Passion ignites greatness"]} color="crimson" />
       <a
         href="https://5hlun88awqk.typeform.com/to/qipNI8gu"
         target="_blank"

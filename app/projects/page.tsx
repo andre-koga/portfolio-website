@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className="grid gap-4">
       <HeaderSlogan
-        slogan={["crafting ideas", "into reality"]}
+        slogan={["crafting ideas into reality"]}
         color="forestgreen"
       />
       <Link
