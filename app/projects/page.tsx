@@ -32,7 +32,7 @@ export default function Page() {
             "Figma",
           ]}
         ></ProjectCard>
-        <div className="flex min-h-[200px] flex-col place-content-around items-center gap-2 rounded border border-mid bg-darky p-2">
+        <div className="flex min-h-[200px] flex-col place-content-around items-center gap-2 rounded bg-darky p-2">
           <h2 className="text-xl uppercase text-lighty">
             More projects to come...
           </h2>

@@ -22,7 +22,8 @@ $colors: (
   "crimson",
   "forestgreen",
   "dodgerblue",
-  "darkorchid"
+  "darkorchid",
+  "white"
 ); // Add your colors here
 
 @for $i from 1 through 50 {
@@ -59,4 +60,23 @@ $colors: (
 
 .hover-text:hover + .hidden-image {
   opacity: 1;
+}
+
+// scrollbar
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888888;
 }

@@ -104,7 +104,7 @@ export const groupedSkills: SkillCategory[] = [
       },
       {
         name: "haskell",
-        level: 1,
+        level: 2,
       },
       {
         name: "scss",
@@ -115,6 +115,10 @@ export const groupedSkills: SkillCategory[] = [
   {
     name: "libraries/frameworks",
     skills: [
+      {
+        name: "sanity.io",
+        level: 3,
+      },
       {
         name: "react",
         level: 3,
@@ -141,6 +145,10 @@ export const groupedSkills: SkillCategory[] = [
       },
       {
         name: "gatsby",
+        level: 2,
+      },
+      {
+        name: "anime.js",
         level: 2,
       },
       {

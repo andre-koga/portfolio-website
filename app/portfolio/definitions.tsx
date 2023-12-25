@@ -76,6 +76,7 @@ export const prizeToColor = (choice: Prize) => {
 export const filterSkills = (skills: Skill[], level: number) => {
   return skills
     .filter((skill) => skill.level === level)
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map((skill, j) => {
       return (
         <li

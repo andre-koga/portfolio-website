@@ -1,5 +1,7 @@
 // Header
 
+import { PortableTextBlock } from "@sanity/types";
+
 export type NavLink = {
   text: string;
   href: string;
@@ -15,4 +17,20 @@ export type SocialLink = {
 
 export type FactRaw = {
   fact: string;
+};
+
+export type postExcerpt = {
+  slug: { current: string };
+  title: string;
+  excerpt: string;
+  publishedAt: string;
+  coverImage: string;
+};
+
+export type post = {
+  slug: { current: string };
+  title: string;
+  body: PortableTextBlock[];
+  publishedAt: string;
+  coverImage: string;
 };
