@@ -21,7 +21,7 @@ export default async function Page() {
       </Link> */}
       <nav className="m-2">
         {posts.map((post, i) => (
-          <Link href={`/blog/${post.slug.current}`}>
+          <Link key={i} href={`/blog/${post.slug.current}`}>
             <div className="prose prose-slate prose-invert mx-auto rounded border border-mid bg-darky p-2 text-justify transition-colors hover:border-light sm:p-4">
               <h2 className="text-center text-2xl font-light uppercase">
                 {post.title}
