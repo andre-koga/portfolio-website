@@ -1,8 +1,9 @@
 const ideas: string[] = [
-  "Dynamic number information calculator",
+  "dynamic number information calculator (nu.andrekoga.com) WIP!",
   "0-player game with emerging behavior",
   "shareable interactive deck of cards through website",
   "collectively created graph of words-connection",
+  "superlative game free public tool",
 ];
 
 export default function Page() {
