@@ -1,6 +1,10 @@
 "use client";
 
-import { PortableText, PortableTextReactComponents } from "@portabletext/react";
+import {
+  toPlainText,
+  PortableText,
+  PortableTextReactComponents,
+} from "@portabletext/react";
 import HeaderSlogan from "@/app/ui/header/header-slogan";
 import { formatDate } from "@/app/lib/utils";
 import { PortableTextBlock } from "@sanity/types";
@@ -24,17 +28,14 @@ export default function DisplayPost({ post }: { post: any }) {
       }: {
         value: { language: string; code: PortableTextBlock[] };
       }) => (
-        <div className="not-prose rounded border border-mid">
+        <div className="not-prose mb-6 rounded border border-mid">
           <p className="bg-mid px-1 py-0.5 text-right text-xs">
             {value.language}
           </p>
           <pre>
-            <code
-              className={`text-sm leading-6 ${value.language}`}
-            >{`twoSum :: [Int] -> Int -> Maybe (Int, Int)
-            twoSum xs target = 
-            let pairs = [(x, y) | x <- xs, y <- xs, x + y == target]
-            in if null pairs then Nothing else Just (head pairs)`}</code>
+            <code className={`text-sm leading-6 ${value.language}`}>
+              {toPlainText(value.code)}
+            </code>
           </pre>
         </div>
       ),
