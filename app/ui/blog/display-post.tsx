@@ -11,10 +11,14 @@ import { PortableTextBlock } from "@sanity/types";
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/atom-one-dark.css";
 import javascript from "highlight.js/lib/languages/javascript";
+import haskell from "highlight.js/lib/languages/haskell";
+import cpp from "highlight.js/lib/languages/cpp";
 
 import { useEffect } from "react";
 
 hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("cpp", cpp);
+hljs.registerLanguage("haskell", haskell);
 
 export default function DisplayPost({ post }: { post: any }) {
   useEffect(() => {
