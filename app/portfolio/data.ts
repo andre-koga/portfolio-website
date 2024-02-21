@@ -110,6 +110,10 @@ export const groupedSkills: SkillCategory[] = [
         name: "scss",
         level: 2,
       },
+      {
+        name: "assembly",
+        level: 2,
+      },
     ],
   },
   {
@@ -234,7 +238,7 @@ export const groupedSkills: SkillCategory[] = [
       },
       {
         name: "android studio",
-        level: 1,
+        level: 2,
       },
       {
         name: "excel",
