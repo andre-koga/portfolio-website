@@ -19,22 +19,28 @@ export default async function Page() {
       >
         Unfinished posts here!
       </Link> */}
-      <nav className="m-2">
-        {posts.map((post, i) => (
-          <Link key={i} href={`/blog/${post.slug.current}`}>
-            <div className="prose prose-slate prose-invert mx-auto rounded border border-mid bg-darky p-2 text-justify transition-colors hover:border-light sm:p-4">
-              <h2 className="text-center text-2xl font-light uppercase">
-                {post.title}
-              </h2>
-              <p>{post.excerpt}</p>
-              <p className="text-center">
-                <time className="text-xs text-lighty">
-                  Last edited at {formatDate(new Date(post.publishedAt))}
-                </time>
-              </p>
-            </div>
-          </Link>
-        ))}
+      <nav className="m-2 grid gap-4">
+        {posts
+          .sort(
+            (a, b) =>
+              new Date(b.publishedAt).getTime() -
+              new Date(a.publishedAt).getTime(),
+          )
+          .map((post, i) => (
+            <Link key={i} href={`/blog/${post.slug.current}`}>
+              <div className="prose prose-slate prose-invert mx-auto rounded border border-mid bg-darky p-2 text-justify transition-colors hover:border-light sm:p-4">
+                <h2 className="text-center text-2xl font-light uppercase">
+                  {post.title}
+                </h2>
+                <p>{post.excerpt}</p>
+                <p className="text-center">
+                  <time className="text-xs text-lighty">
+                    Last edited at {formatDate(new Date(post.publishedAt))}
+                  </time>
+                </p>
+              </div>
+            </Link>
+          ))}
       </nav>
     </main>
   );

@@ -11,7 +11,7 @@ export default function Page() {
       />
       <Link
         href="/projects/ideas"
-        className="mx-auto rounded border border-mid px-2 text-sm text-light transition-colors hover:border-light"
+        className="mx-auto rounded border border-red-500 px-2 text-sm text-light transition-colors hover:border-light"
       >
         Future project ideas here!
       </Link>
@@ -34,7 +34,7 @@ export default function Page() {
         />
         <ProjectCard
           title="Numerus"
-          description="Calculator capable of more advanced operations"
+          description="Calculator capable of more advanced operations (unfinished!)"
           link="https://nu.andrekoga.com"
           image1="/images/nu.png"
           image2="/images/nu2.png"
